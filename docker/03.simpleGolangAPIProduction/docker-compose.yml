@@ -1,0 +1,12 @@
+services:
+  api-go:
+    container_name: simpleGolangAPIProduction 
+    #restart: always
+    # Configuration for building the docker image for the service
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/home/app/api  
+    environment:
+      API_SERVER_ADDR: ":3000"           

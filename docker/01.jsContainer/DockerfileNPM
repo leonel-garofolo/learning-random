@@ -1,0 +1,25 @@
+# Image base to npm
+FROM node:18-alpine3.15
+
+#Person who maintainer the image
+MAINTAINER Leonel Garofolo <garofolo.leonel@gmail.com>
+
+# kind Enviroment
+ENV NODE_ENV production
+
+#Root where the container work
+WORKDIR /usr/src/app
+
+#Copy file from host to container
+COPY package*.json ./
+
+#Install project with npm
+RUN npm install
+
+# Bundle app source
+COPY . .
+
+#Expose port container to host
+EXPOSE 3000
+
+CMD npm start

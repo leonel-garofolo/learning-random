@@ -1,0 +1,17 @@
+# First phase, we get node image and build application
+FROM node:alpine as builder
+
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+CMD npm run build
+
+# Seccond phase, we get nginx image and get up server application
+FROM nginx
+
+# copy resorce from other phase (in this case is node phase)
+COPY --from=builder /app/builder /usr/share/nginx/html
+
+
+
