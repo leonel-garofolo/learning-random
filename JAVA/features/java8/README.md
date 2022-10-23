@@ -19,3 +19,20 @@ It's feature is important use to prevent the NullPointerException in runtime exe
 
 [Examples](src/main/java/com/java8/app/optional/JavaOptional.java)
 
+## Functional Programming
+Functional programming is a programming paradigm in which we try to bind everything in pure mathematical functions style.
+
+#### Funciones puras.
+
+#### Composición de funciones.
+
+#### Estados compartidos.
+
+#### Mutabilidad.
+
+#### Efecto secundario.    
+    
+    
+    
+
+
