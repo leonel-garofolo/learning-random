@@ -1,2 +1,7 @@
 /JAVA/features/java8/target/
 /JAVA/features/test-lib/target/
+/JAVA/features/threadlab/target/
+/JAVA/spring/micro-api-rest/.mvn/
+/JAVA/spring/micro-api-rest/target/
+/JAVA/spring/micro-report-api/.mvn/
+/JAVA/spring/micro-report-api/target/

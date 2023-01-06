@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/features/java8/pom.xml" />
+        <option value="$PROJECT_DIR$/features/java9/pom.xml" />
+        <option value="$PROJECT_DIR$/features/test-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/features/threadlab/pom.xml" />
+        <option value="$PROJECT_DIR$/spring/micro-report-api/pom.xml" />
+        <option value="$PROJECT_DIR$/spring/micro-api-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/nonRelationalSQL/SportsMongoApp/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
+</project>
