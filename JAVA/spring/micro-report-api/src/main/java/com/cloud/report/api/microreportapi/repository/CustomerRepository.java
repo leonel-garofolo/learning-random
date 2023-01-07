@@ -8,8 +8,8 @@ import com.cloud.report.api.microreportapi.model.ProductReport;
 
 public interface CustomerRepository extends MongoRepository<ProductReport, String> {
 
-	ProductReport findByFirstName(String firstName);
+	ProductReport findByName(String name);
 
-	List<ProductReport> findByLastName(String lastName);
+	List<ProductReport> findByDescription(String description);
 
 }

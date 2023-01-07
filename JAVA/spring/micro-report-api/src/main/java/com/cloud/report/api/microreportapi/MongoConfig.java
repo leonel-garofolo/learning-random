@@ -16,25 +16,32 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.cloud.report.api.microreportapi")
+@EnableMongoRepositories(basePackages = "com.cloud.report.api.microreportapi.repository")
 public class MongoConfig extends AbstractMongoClientConfiguration {
 
-    private final List<Converter<?, ?>> converters = new ArrayList<>();
+    private static final String DB_CONNECTION_STRING_PRE = "mongodb+srv://root:1234@mycluster.xmjvkkr.mongodb.net/?retryWrites=true&w=majority";
 
-    @Override
-    protected String getDatabaseName() {
-        return "test";
-    }
+    private static final String DB_CONNECTION_STRING_DEV = "mongodb://root:1234@localhost:27017/?retryWrites=true&w=majority";
+	private static final String PACKAGE_MODEL = "com.cloud.report.api.microreportapi.model";
+	private static final String DB_NAME = "spring_reports";
 
-    @Override
-    public MongoClient mongoClient() {
-        final ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017/test");
-        final MongoClientSettings mongoClientSettings = MongoClientSettings.builder().applyConnectionString(connectionString).build();
-        return MongoClients.create(mongoClientSettings);
-    }
+	private final List<Converter<?, ?>> converters = new ArrayList<>();
 
-    @Override
-    public Collection<String> getMappingBasePackages() {
-        return Collections.singleton("com.cloud.report.api.microreportapi.model");
-    }
+	@Override
+	protected String getDatabaseName() {
+		return DB_NAME;
+	}
+
+	@Override
+	public MongoClient mongoClient() {
+		final ConnectionString connectionString = new ConnectionString(DB_CONNECTION_STRING_DEV);
+		final MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
+				.applyConnectionString(connectionString).build();
+		return MongoClients.create(mongoClientSettings);
+	}
+
+	@Override
+	public Collection<String> getMappingBasePackages() {
+		return Collections.singleton(PACKAGE_MODEL);
+	}
 }

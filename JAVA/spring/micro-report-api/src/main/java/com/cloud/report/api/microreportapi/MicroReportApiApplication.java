@@ -5,11 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.cloud.report.api.microreportapi.model.ProductReport;
 import com.cloud.report.api.microreportapi.repository.CustomerRepository;
@@ -28,7 +24,6 @@ public class MicroReportApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
 		repository.deleteAll();
 
 		// save a couple of customers
@@ -45,14 +40,13 @@ public class MicroReportApiApplication implements CommandLineRunner {
 		// fetch an individual customer
 		log.info("Customer found with findByFirstName('Alice'):");
 		log.info("--------------------------------");
-		log.info("productReport -> {}", repository.findByFirstName("Alice"));
+		log.info("productReport -> {}", repository.findByName("Alice"));
 
 		log.info("Customers found with findByLastName('Smith'):");
 		log.info("--------------------------------");
-		for (ProductReport productReport : repository.findByLastName("Smith")) {
+		for (ProductReport productReport : repository.findByDescription("Smith")) {
 			log.info("proca-> {}", productReport);
 		}
-
 	}
 
 }
