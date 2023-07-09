@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/JAVA/caches/cache-redis-example/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/caches/cache-redis-example/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/features/java8/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/features/java8/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/features/java9/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/features/test-lib/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/features/test-lib/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/delivery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/delivery/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/shared/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/shared/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/src/delivery/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/src/delivery/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/patterns/patterns-with-java/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/patterns/patterns-with-java/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/spring/micro-api-rest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/spring/micro-api-rest/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/spring/micro-report-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/spring/micro-report-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/testing/tdd/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JAVA/testing/tdd/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

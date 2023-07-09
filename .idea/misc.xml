@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/JAVA/spring/micro-api-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/spring/micro-report-api/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/features/java8/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/features/test-lib/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/patterns/patterns-with-java/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/caches/cache-redis-example/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/testing/tdd/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/hexagonalarquitecture/ddd/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
+</project>

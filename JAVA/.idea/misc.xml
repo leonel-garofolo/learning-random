@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/spring/micro-report-api/pom.xml" />
         <option value="$PROJECT_DIR$/spring/micro-api-rest/pom.xml" />
         <option value="$PROJECT_DIR$/nonRelationalSQL/SportsMongoApp/pom.xml" />
+        <option value="$PROJECT_DIR$/patterns-with-java/pom.xml" />
+        <option value="$PROJECT_DIR$/patterns/patterns-with-java/pom.xml" />
       </list>
     </option>
   </component>

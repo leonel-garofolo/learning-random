@@ -1,5 +1,7 @@
 package com.cloud.report.api.microreportapi.model;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 
 import lombok.Getter;
@@ -12,11 +14,14 @@ import lombok.Setter;
 public class ProductReport {
 	@Id
 	public String id;
+
+	private Date soldDated;
 	private String name;
 	private String description;
 	private Integer sold;
 
-	public ProductReport(String name, String description, Integer sold) {
+	public ProductReport(Date soldDated, String name, String description, Integer sold) {
+		this.soldDated = soldDated;
 		this.name = name;
 		this.description = description;
 		this.sold = sold;
@@ -24,6 +29,6 @@ public class ProductReport {
 
 	@Override
 	public String toString() {
-		return "ProductReport{" + "name='" + name + '\'' + ", description='" + description + '\'' + ", sold=" + sold + '}';
+		return "ProductReport{" + "id='" + id + '\'' + ", soldDated=" + soldDated + ", name='" + name + '\'' + ", description='" + description + '\'' + ", sold=" + sold + '}';
 	}
 }

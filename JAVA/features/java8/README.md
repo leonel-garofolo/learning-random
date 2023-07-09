@@ -32,7 +32,14 @@ Functional programming is a programming paradigm in which we try to bind everyth
 
 #### Efecto secundario.    
     
-    
+## Implementation default method in Java Interface
+Java 8 allow us implement default method in an interface without necessary implement all method in object implamentation,
+such as [VehicleInterface](src/main/java/com/java8/app/interfaces/VehicleInterface.java):
+```
+default Boolean isWorking(Vehicle vehicle){
+    return true;
+}
+```
     
 
 

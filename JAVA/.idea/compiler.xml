@@ -15,6 +15,7 @@
         <module name="micro-report-api" />
         <module name="sportsapp" />
         <module name="java8" />
+        <module name="patterns-with-java" />
         <module name="test-lib" />
         <module name="micro-api-rest" />
       </profile>
@@ -24,6 +25,7 @@
       <module name="java9" target="9" />
       <module name="micro-api-rest" target="1.8" />
       <module name="micro-report-api" target="1.8" />
+      <module name="patterns-with-java" target="1.8" />
       <module name="sportsapp" target="1.8" />
       <module name="test-lib" target="1.8" />
       <module name="threadlab" target="1.8" />

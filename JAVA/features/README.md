@@ -1,11 +1,6 @@
 ## Important Features
 These project use the new features that Java introduce in the outstanding versions.
 
-#### Simple java project
-'''
-mvn archetype:generate -DgroupId=com.java8.app -DartifactId=java8 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
-''' 
-
 ### Java 8
 Java 8 introduce the class Optional, Streams, CompletableFuture and Lambda.
 
