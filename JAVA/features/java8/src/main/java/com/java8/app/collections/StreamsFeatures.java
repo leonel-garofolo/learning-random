@@ -2,6 +2,7 @@ package com.java8.app.collections;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -11,6 +12,7 @@ import com.java8.app.model.Person;
 /**
  * Document about Streams vs Collections https://www.oracle.com/lad/technical-resources/articles/java/processing-streams-java-se8.html Also,
  * we can see the feature of develop with Programing funtional Performance: https://blog.knoldus.com/java-streams-vs-loop/
+ * Summary: https://www.thecodecity.com/java/streams-in-java/
  */
 public class StreamsFeatures {
 
@@ -66,8 +68,9 @@ public class StreamsFeatures {
         new Person("VAne", Arrays.asList("Mendoza 1008", "calle chile"))
     );
 
+    Set<String> addresses = personList.stream().flatMap(person -> person.getAddress().stream()).collect(Collectors.toSet());
     System.out.println(
-        personList.stream().flatMap(person -> person.getAddress().stream()).collect(Collectors.toList())
+        addresses
     );
   }
 

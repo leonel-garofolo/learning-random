@@ -1,38 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/JAVA/features/threadlab/src/main/resources/archetype-resources" includeSubdirectories="true" />
-    </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="delivery" />
-        <module name="shared" />
-        <module name="micro-report-api" />
+        <module name="cache-caffeine-example" />
         <module name="java8" />
-        <module name="patterns-with-java" />
-        <module name="tdd" />
-        <module name="test-lib" />
-        <module name="cache-redis-example" />
-        <module name="micro-api-rest" />
+        <module name="evendrivenkafka" />
+        <module name="apigateway-security" />
+        <module name="hellowork-lambda-aws" />
+      </profile>
+      <profile name="Annotation profile for mic-mail-manager" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.2/lombok-1.18.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.1.0/lombok-mapstruct-binding-0.1.0.jar" />
+        </processorPath>
+        <module name="authenticator-domain" />
+        <module name="mic-mail-manager" />
+        <module name="authenticator-infrastructure" />
+        <module name="authenticator-application" />
+        <module name="authenticator-api-rest" />
+        <module name="authenticator-boot" />
+        <module name="mic-delivery" />
+        <module name="authenticator-api-grpc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java9" target="9" />
-      <module name="sportsapp" target="1.8" />
-      <module name="threadlab" target="1.8" />
+      <module name="openapi-spring" target="1.8" />
+      <module name="spring-multicaching-mongo-bp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="delivery" options="-parameters" />
-      <module name="micro-api-rest" options="-parameters" />
-      <module name="micro-report-api" options="-parameters" />
-      <module name="shared" options="-parameters" />
+      <module name="authenticator-api-grpc" options="-parameters -Amapstruct.verbose=true" />
+      <module name="authenticator-api-rest" options="-parameters -Amapstruct.verbose=true" />
+      <module name="authenticator-application" options="-parameters -Amapstruct.verbose=true" />
+      <module name="authenticator-boot" options="-parameters -Amapstruct.verbose=true" />
+      <module name="authenticator-domain" options="-parameters -Amapstruct.verbose=true" />
+      <module name="authenticator-infrastructure" options="-parameters -Amapstruct.verbose=true" />
+      <module name="evendrivenkafka" options="-parameters" />
+      <module name="mic-authenticator" options="-parameters -Amapstruct.verbose=true" />
+      <module name="mic-delivery" options="-parameters -Amapstruct.verbose=true" />
+      <module name="mic-mail-manager" options="-parameters -Amapstruct.verbose=true" />
+      <module name="openapi-spring" options="-parameters" />
+      <module name="spring-multicaching-mongo-bp" options="" />
     </option>
   </component>
 </project>

@@ -7,13 +7,13 @@
       <option name="url" value="https://axinic.central.inditex.grp/artifactory/inditex-public" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="central" />
-      <option name="name" value="Central Repository" />
-      <option name="url" value="https://repo.maven.apache.org/maven2" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="inditex-artifacts" />
       <option name="name" value="inditex-artifacts" />
+      <option name="url" value="https://inditex.jfrog.io/inditex/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
       <option name="url" value="https://inditex.jfrog.io/inditex/maven-public" />
     </remote-repository>
     <remote-repository>

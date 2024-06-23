@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: authenticatorDB
+      username: mongoadmin
+      password: 1234
+
+# swagger-ui custom path
+springdoc:
+  swagger-ui:
+  path: /swagger-ui.html

@@ -1,5 +1,9 @@
-/JAVA/.idea/
-
+.idea/workspace.xml
+**/.idea/**
+.idea/**
+.idea
+**/target/**
+**/.terraform/**
 /JAVA/features/java8/target/
 /JAVA/features/test-lib/target/
 /JAVA/features/threadlab/target/

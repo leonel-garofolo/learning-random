@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
-  <component name="CheckStyle-IDEA-Module" serialisationVersion="2">
-    <option name="activeLocationsIds" />
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="c0de7fa9-b6a0-4e12-a575-02e77bbe2835" />
   </component>
 </module>

@@ -7,7 +7,6 @@ Command to create a new project with basic features
 mvn archetype:generate -DgroupId=com.java8.app -DartifactId=java8 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 ```
 
-
 #### slf4j Library
 I use the log [slf4j](https://www.slf4j.org/) in the projects examples.
 

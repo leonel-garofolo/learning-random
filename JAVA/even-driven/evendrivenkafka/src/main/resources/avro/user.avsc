@@ -1,0 +1,27 @@
+{
+  "namespace": "com.evendrivenkafka.app.event.v1",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "favorite_number",
+      "type": "int"
+    },
+    {
+      "name": "favorite_color",
+      "type": "string"
+    }
+  ]
+}
