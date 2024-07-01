@@ -18,20 +18,56 @@
     <!-- libs -->
     <spring.version>2.5.5</spring.version>
     <redis.version>3.7.0</redis.version>
+    <slf4j.version>2.0.13</slf4j.version>
+    <log4j.version>2.23.1</log4j.version>
+    <caffeine.version>2.9.1</caffeine.version>
+    <lombok.version>1.18.20</lombok.version>
+    <mapstruct.version>1.5.5.Final</mapstruct.version>
+    <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
   </properties>
 
   <dependencies>
     <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>${caffeine.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.20</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${mapstruct.version}</version>
+    </dependency>
 
-    <!-- Spring Data Redis -->
+    <!-- Spring -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-cache</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-redis</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-mongodb</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
@@ -42,31 +78,35 @@
       <version>${redis.version}</version>
     </dependency>
 
-    <!-- logs -->
-    <!-- SLF4J -->
+
+    <!-- testing-->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.32</version> <!-- Ajusta la versión según tus necesidades -->
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
     </dependency>
-
-    <!-- Logback (implementación de SLF4J) -->
     <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.2.6</version> <!-- Ajusta la versión según tus necesidades -->
-    </dependency>
-
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>it.ozimov</groupId>
+      <artifactId>embedded-redis</artifactId>
+      <version>0.7.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
+    <testResources>
+      <!-- Test de integracion src/it-->
+      <testResource>
+        <targetPath>../test-classes/</targetPath>
+        <filtering>true</filtering>
+        <directory>src/it/resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </testResource>
+    </testResources>
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -114,10 +154,54 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+
         <configuration>
-          <source>8</source>
-          <target>8</target>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+          <showDeprecation>true</showDeprecation>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>${mapstruct.version}</version>
+            </path>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+            <!-- This is needed when using Lombok 1.8.16 and above -->
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok-mapstruct-binding</artifactId>
+              <version>${lombok-mapstruct-binding.version}</version>
+            </path>
+          </annotationProcessorPaths>
+
+          <compilerArgs>
+            <!-- This arg ensures that mapstruct generate a Spring -->
+            <!-- Bean out of every mapper implementation -->
+            <compilerArg>-Amapstruct.defaultComponentModel=spring</compilerArg>
+          </compilerArgs>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/it/java</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
