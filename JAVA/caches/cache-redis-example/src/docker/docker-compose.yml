@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
   cache:
+    container_name: multipleCacheRedis
     image: redis:6.2-alpine
     restart: always
     ports:
@@ -9,6 +10,28 @@ services:
     command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
     volumes:
       - cache:/data
+    networks:
+      - my-network
+
+  mongo:
+    container_name: multipleCacheMongo
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+      MONGO_INITDB_DATABASE: authenticatorDB
+    volumes:
+      - ./config/init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - my-network
+
 volumes:
   cache:
     driver: local
+
+networks:
+  my-network:
+    driver: bridge

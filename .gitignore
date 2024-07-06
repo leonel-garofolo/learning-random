@@ -1,7 +1,7 @@
 .idea/workspace.xml
 **/.idea/**
 .idea/**
-.idea
+.idea/
 **/target/**
 **/.terraform/**
 /JAVA/features/java8/target/
