@@ -8,6 +8,61 @@ Tools that you need:
 * **minikube**: runs an all-in-one or a multi-node local Kubernetes cluster on your personal computer
 * **kubeadm**:  You can use the kubeadm tool to create and manage Kubernetes clusters
 
+## Tutorial
+[hello-world](https://kubernetes.io/docs/tutorials/hello-minikube/)
+
+Use the following command to run the container:
+```
+docker run -dp 127.0.0.1:8081:8081 hello-node
+```
+
+It's necessary to push container in minikube registry
+```
+# activate config
+eval $(minikube docker-env)
+
+# build container
+docker build -t hello-node .
+
+# Activate registry 
+minikube addons enable registry
+
+# Save container in Minikube registry
+docker tag hello-node:latest localhost:5000/hello-node:latest
+docker push localhost:5000/hello-node:latest
+```
+
+Create k8s deployment
+```
+kubectl create deployment hello-node --image=hello-node:latest
+```
+Create a service
+```
+kubectl expose deployment hello-node --type=LoadBalancer --port=8081
+```
+
+Use the minikube docker environment
+```
+# activate config
+eval $(minikube docker-env)
+
+# revert config
+eval $(minikube docker-env -u)
+```
+
+Clean up
+```
+kubectl delete service hello-node
+kubectl delete deployment hello-node
+minikube stop
+minikube delete
+```
+
+Scale
+```
+kubectl scale deployment hello-node --replicas=3
+```
+
 ## API REST
 We can tell to kubernetes, through http request what we want status to us application
 
