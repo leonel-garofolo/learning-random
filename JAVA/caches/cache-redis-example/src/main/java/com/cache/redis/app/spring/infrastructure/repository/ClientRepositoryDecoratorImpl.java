@@ -17,11 +17,15 @@ import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
 public class ClientRepositoryDecoratorImpl implements ClientRepositoryDecorator {
+
+  @Autowired
+  private ApplicationEventPublisher applicationEventPublisher;
 
   private final Cache<String, Client> cache = Caffeine.newBuilder().build();
 

@@ -4,6 +4,7 @@ The solution is use Redis to manager data cache in multiple instance.
 
 ## References
  - [Distributed lock with Redis and Spring Boot](https://medium.com/@egorponomarev/distributed-lock-with-redis-and-spring-boot-2c3f51a44c65)
+ - [Redis distributed lock](https://redis.io/docs/latest/develop/use/patterns/distributed-locks/)
  - [Spring Data Audit](https://medium.com/programmingmitra-com/spring-data-jpa-auditing-saving-createdby-createddate-lastmodifiedby-lastmodifieddate-c2d64c42998e)
 
 # API Rest endpoint request
