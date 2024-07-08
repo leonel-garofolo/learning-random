@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import com.cache.redis.app.spring.domain.infrastructure.ClientRepositoryDecorator;
 import com.cache.redis.app.spring.domain.model.Client;
+import com.cache.redis.app.spring.infrastructure.outbound.ClientEmailEvent;
 import com.cache.redis.app.spring.infrastructure.repository.client.ClientCache;
 import com.cache.redis.app.spring.infrastructure.repository.client.ClientDao;
 import com.cache.redis.app.spring.infrastructure.repository.client.ClientJpaRepository;
@@ -47,6 +48,11 @@ public class ClientRepositoryDecoratorImpl implements ClientRepositoryDecorator 
       final Optional<ClientDao> clientFound = clientJpaRepository.findById(client.getId());
       clientFound.ifPresent(dao -> clientDao.setCreated(dao.getCreated()));
       clientDao.setUpdated(timestamp);
+    } else {
+      ClientEmailEvent clientEmailEvent = ClientEmailEvent.builder()
+              .name(client.getName())
+              .build();
+      applicationEventPublisher.publishEvent(clientEmailEvent);
     }
 
     final ClientDao clientPersisted = clientJpaRepository.save(clientDao);
