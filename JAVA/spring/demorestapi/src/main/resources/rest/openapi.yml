@@ -1,0 +1,341 @@
+openapi: 3.0.0
+info:
+  title: API for Clients, Products, and Deliveries
+  description: API to manage clients, products, and deliveries.
+  version: 1.0.0
+paths:
+  /clients:
+    get:
+      summary: Get list of clients
+      operationId: findAllClient
+      responses:
+        '200':
+          description: Successfully retrieved the list of clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClientResponse'
+    post:
+      summary: Create a new client
+      operationId: createClient
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientRequest'
+      responses:
+        '201':
+          description: Client successfully created
+        '400':
+          description: Bad request
+
+  /clients/{id}:
+    get:
+      summary: Get client by ID
+      operationId: findClient
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Client found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientResponse'
+        '404':
+          description: Client not found
+    put:
+      summary: Update client by ID
+      operationId: updateClient
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientRequest'
+      responses:
+        '200':
+          description: Client successfully updated
+        '404':
+          description: Client not found
+    delete:
+      summary: Delete client by ID
+      operationId: deleteClient
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Client successfully deleted
+        '404':
+          description: Client not found
+
+  /products:
+    get:
+      summary: Get list of products
+      operationId: findAllProduct
+      responses:
+        '200':
+          description: Successfully retrieved the list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductResponse'
+    post:
+      summary: Create a new product
+      operationId: createProduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductResponse'
+      responses:
+        '201':
+          description: Product successfully created
+        '400':
+          description: Bad request
+
+  /products/{id}:
+    get:
+      summary: Get product by ID
+      operationId: findProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '404':
+          description: Product not found
+    put:
+      summary: Update product by ID
+      operationId: updateProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductResponse'
+      responses:
+        '200':
+          description: Product successfully updated
+        '404':
+          description: Product not found
+    delete:
+      summary: Delete product by ID
+      operationId: deleteProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Product successfully deleted
+        '404':
+          description: Product not found
+
+  /deliveries:
+    get:
+      summary: Get list of deliveries
+      operationId: findAllDelivery
+      responses:
+        '200':
+          description: Successfully retrieved the list of deliveries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeliveryResponse'
+    post:
+      summary: Create a new delivery
+      operationId: createDelivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryResponse'
+      responses:
+        '201':
+          description: Delivery successfully created
+        '400':
+          description: Bad request
+
+  /deliveries/{id}:
+    get:
+      summary: Get delivery by ID
+      operationId: findDelivery
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Delivery found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryResponse'
+        '404':
+          description: Delivery not found
+    put:
+      summary: Update delivery by ID
+      operationId: updateDelivery
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryResponse'
+      responses:
+        '200':
+          description: Delivery successfully updated
+        '404':
+          description: Delivery not found
+    delete:
+      summary: Delete delivery by ID
+      operationId: deleteDelivery
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Delivery successfully deleted
+        '404':
+          description: Delivery not found
+
+components:
+  schemas:
+    ClientRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The client's unique ID
+        firstName:
+          type: string
+          description: The client's first name
+        lastName:
+          type: string
+          description: The client's last name
+        address:
+          type: string
+          description: The client's address
+        phone:
+          type: string
+          description: The client's phone number
+      required:
+        - id
+        - firstName
+        - lastName
+        - address
+        - phone
+    ClientResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The client's unique ID
+        firstName:
+          type: string
+          description: The client's first name
+        lastName:
+          type: string
+          description: The client's last name
+        address:
+          type: string
+          description: The client's address
+        phone:
+          type: string
+          description: The client's phone number
+      required:
+        - id
+        - firstName
+        - lastName
+        - address
+        - phone
+
+    ProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The product's unique ID
+        name:
+          type: string
+          description: The product's name
+        description:
+          type: string
+          description: A description of the product
+        price:
+          type: number
+          format: double
+          description: The price of the product
+      required:
+        - id
+        - name
+
+    DeliveryResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: The delivery's unique ID
+        sold:
+          type: string
+          format: date-time
+          description: Date when the product was sold
+        delivered:
+          type: string
+          format: date-time
+          description: Date when the product was delivered
+      required:
+        - id
+        - sold

@@ -1,4 +1,4 @@
-package com.tdd.app;
+package com.learningrandom.base;
 
 /**
  * Hello world!
